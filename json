@@ -1,0 +1,104 @@
+// src/components/Header.js
+import React from 'react';
+import styled from 'styled-components';
+
+const HeaderWrapper = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #141414;
+`;
+
+const Logo = styled.img`
+  height: 25px;
+`;
+
+const Nav = styled.nav`
+  a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+const Header = () => {
+  return (
+    <HeaderWrapper>
+      <Logo src="/logo.png" alt="Aluraflix" />
+      <Nav>
+        <a href="/">Home</a>
+        <a href="/series">Series</a>
+        <a href="/movies">Movies</a>
+        <a href="/new">New & Popular</a>
+        <a href="/mylist">My List</a>
+      </Nav>
+    </HeaderWrapper>
+  );
+};
+
+export default Header;
+
+// src/components/Banner.js
+import React from 'react';
+import styled from 'styled-components';
+
+const BannerWrapper = styled.section`
+  position: relative;
+  height: 60vh;
+  background-size: cover;
+  background-image: url('https://image.tmdb.org/t/p/original/your-banner-image.jpg');
+  background-position: center center;
+  color: white;
+  padding: 20px;
+`;
+
+const Title = styled.h1`
+  font-size: 3rem;
+`;
+
+const Description = styled.p`
+  font-size: 1.2rem;
+  width: 45%;
+  line-height: 1.3;
+  padding-top: 1rem;
+`;
+
+const Buttons = styled.div`
+  margin-top: 20px;
+  button {
+    cursor: pointer;
+    color: white;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    border-radius: 0.2vw;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgba(51, 51, 51, 0.5);
+  }
+`;
+
+const Banner = () => {
+  return (
+    <BannerWrapper>
+      <Title>Movie Title</Title>
+      <Description>
+        This is a short description of the movie.
+      </Description>
+      <Buttons>
+        <button>Play</button>
+        <button>My List</button>
+      </Buttons>
+    </BannerWrapper>
+  );
+};
+
+export default Banner;
+
